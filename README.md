@@ -7,7 +7,7 @@ Its endpoints pre-process the data and send it to the LLM model using OpenAI API
 The features represented by API:
 
 - PDF context summarization. Accepts a PDF file as input and returns its summarized **text** content
-- General LLM query. Can answer generic requests, answers or specific tasks (*hostname:5000/generic_message*)
+- General LLM query. Can answer generic requests, answers or specific tasks
 
 ## **Deployment / Usage**
 
