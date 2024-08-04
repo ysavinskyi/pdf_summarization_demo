@@ -2,7 +2,7 @@
 
 This project is a demonstration of custom API interface that implements prompt engineering techniques to deliver the result.
 
-Its APIs pre-process the data and send it to the LLM model using OpenAI API, and then return its processes response.
+Its endpoints pre-process the data and send it to the LLM model using OpenAI API, and then return its processed response.
 
 The features represented by API:
 
