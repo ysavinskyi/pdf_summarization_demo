@@ -11,18 +11,35 @@ The features represented by API:
 
 ## **Deployment / Usage**
 
-The application is containerized by Docker (`./docker_image.tar`), so it can be deployed accordingly:
+The application is set to be containerized by Docker, so it can be deployed accordingly (**example for Unix**):
 
-#### 1. Load the archived image to Docker (example for Unix)
+#### 1. Create an image
+In order to create image of current project from the project repo, execute
+```commandline
+sudo docker build -f DockerFile -t pdf_summarization_demo:latest .
+```
+
+#### 2. Export docker image
+
+Using following command you can export the image of application to be transferred to target machine
+```commandline
+sudo docker save -o docker_image.tar pdf_summarization_demo:latest
+```
+
+#### 3. Load the archived image to Docker
+
+Having the docker image ready for loading, you may execute this command to upload image to Docker on another machine
+
 ```
 sudo docker load -i ./docker_image.tar
 ```
-#### 2. Validate and get the repo name and tag
+#### 4. Validate and get the repo name and tag
+This command helps to verify the image loaded and to see its actual name and tag (*pdf_summarization_demo:latest*)
 ```
 sudo docker images
 ```
-this way you will be able to see actual name and tag of image (*pdf_summarization_demo:latest*)
-#### 3. Run the application container
+
+#### 5. Deploy the application container
 ```commandline
 docker run -p 5000:5000 pdf_summarization_demo:latest
 ```
@@ -74,7 +91,7 @@ The `validator_name` attribute defines the algorithm used for prompt result vali
 This way the best scored answer from range of `n_answers` will be passed as optimal response.
 
 
-### 1. generic_message
+### 2. generic_message
 
 The method handles simple Zero-shot or Few-shot prompts sent via **POST** request to *hostname:5000/summarize_pdf* in same ways as previous:
 
