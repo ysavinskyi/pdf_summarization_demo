@@ -11,6 +11,29 @@ The features represented by API:
 
 ## **Deployment / Usage**
 
+The application is containerized by Docker (`./docker_image.tar`), so it can be deployed accordingly:
+
+#### 1. Load the archived image to Docker (example for Unix)
+```
+sudo docker load -i ./docker_image.tar
+```
+#### 2. Validate and get the repo name and tag
+```
+sudo docker images
+```
+this way you will be able to see actual name and tag of image (*pdf_summarization_demo:latest*)
+#### 3. Run the application container
+```commandline
+docker run -p 5000:5000 pdf_summarization_demo:latest
+```
+
+After that, you will be able to send requests to 127.0.0.1 hostname (debug server).
+
+In case you need to run image on another host name, consider updating `app_run.py`:13 as below:
+```commandline
+app.run(host='0.0.0.0', port=<desired_port>)
+```
+and adjusting `DockerFile` accordingly.
 
 ## **Feature specifications** 
 ### 1. summarize_pdf
@@ -104,4 +127,9 @@ The uniform of API resonse is structured as following:
         'metrics': <validation_metrics_used>
     }
 ```
-containing the text of best response defined and the metrics used to evaluate it. 
+containing the text of best response defined and the metrics used to evaluate it.
+
+
+## Support
+
+Once any question or issue arise when using following scrip, feel free to submit email to *sservelynx@gmail.com*.
