@@ -149,4 +149,4 @@ containing the text of best response defined and the metrics used to evaluate it
 
 ## Support
 
-Once any question or issue arise when using following scrip, feel free to submit email to *sservelynx@gmail.com*.
+Once any question or issue arise when using this script, feel free to submit email to *sservelynx@gmail.com*.
