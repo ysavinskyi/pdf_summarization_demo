@@ -93,7 +93,7 @@ This way the best scored answer from range of `n_answers` will be passed as opti
 
 ### 2. generic_message
 
-The method handles simple Zero-shot or Few-shot prompts sent via **POST** request to *hostname:5000/summarize_pdf* in same ways as previous:
+The method handles simple Zero-shot or Few-shots prompts sent via **POST** request to *hostname:5000/generic_message* in same ways as previous:
 
 Using Python `requests`module
 
